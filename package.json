@@ -21,11 +21,20 @@
     "web-vitals": "^2.1.4",
     "webpack": "^5.97.1"
   },
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^5.0.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3"
+  },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired --openssl-legacy-provider start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "eslintConfig": {
     "extends": [
